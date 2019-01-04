@@ -1,4 +1,4 @@
-# FateSky
+http://localhost:8080/druid/index.html# FateSky
 
 #### 介绍
 这是一个为高校万千学子幸福为目标的项目
@@ -16,7 +16,7 @@
 
 #### 使用说明
 
-1. xxxx
+1. druid连接池管理页面地址：http://localhost:8080/druid/index.html
 2. xxxx
 3. xxxx
 

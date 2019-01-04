@@ -15,11 +15,14 @@
 	<description>fatesky for Spring Boot</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version><!-- 声明版本号，以后统一在这里进行管理-->
+		<packaging>jar</packaging>
+		<druid.version>1.1.12</druid.version>
+		<mysql.version>8.0.11</mysql.version>
+		<log4j.version>1.2.16</log4j.version>
 	</properties>
 	
-	<packaging>jar</packaging>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,6 +38,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- druid数据库连接池  -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid</artifactId>
+		    <version>${druid.version}</version>
+		</dependency>
+		
+		<!-- mysql驱动包  -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql.version}</version>
+		</dependency>
+		
+		<!-- log4日志包  -->
+		<dependency>
+		      <groupId>log4j</groupId>
+		      <artifactId>log4j</artifactId>
+		      <version>${log4j.version}</version>
+		      <scope>compile</scope>
+		 </dependency>
 	</dependencies>
 
 	<build>
