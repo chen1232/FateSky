@@ -9,5 +9,6 @@ public class FateskyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FateskyApplication.class, args);
 	}
+	
 }
 
