@@ -18,8 +18,8 @@ import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
 /**
  * web 配置类
  *
- * @author fengshuonan
- * @date 2016年11月12日 下午5:03:32
+ * @author chengd
+ * @date 2019-01-5 20:37
  */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

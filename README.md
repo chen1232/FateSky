@@ -17,7 +17,7 @@ http://localhost:8080/druid/index.html# FateSky
 #### 使用说明
 
 1. druid连接池管理页面地址：http://localhost:8080/druid/index.html
-2. xxxx
+2. 日志工具使用log4j2
 3. xxxx
 
 #### 参与贡献

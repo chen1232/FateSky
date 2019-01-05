@@ -16,7 +16,6 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
 @Configuration
-//@ConfigurationProperties(prefix="spring.datasource")
 public class DruidConfiguration {
     
     @Value("${spring.datasource.url}")

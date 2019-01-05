@@ -1,0 +1,76 @@
+Configuration:
+	status: warn
+	name: YAMLConfig
+	Properties:
+		Property: #常量
+		- name: log.path
+		value: /opt/logs         
+	Appenders: #输出项
+		Console: #输出到控制台
+		name: CONSOLE
+		target: SYSTEM_OUT
+		ThresholdFilter: #过滤器
+			level: info #级别
+			onMatch: ACCEPT  #接收（>= info）
+			onMismatch: DENY #拒绝（< info）
+		PatternLayout: #输出样式
+			pattern:"%highlight{%d{yyyy-MM-dd HH:mm:ss,SSS}-Alphashihui:%4p %t (%F:%L) - %m%n}{STYLE=Logback}"
+		RollingRandomAccessFile:  # 输出到文件，超过10MB归档
+			- name: ERROR_FILE 
+			ignoreExceptions: false  #是否忽略异常
+            fileName: ${log.path}/error/error.log
+            filePattern: "${log.path}/error/error_%d{yyyy-MM-dd}-%i.log.gz"
+            Filters: #过滤器
+            	ThresholdFilter: #等级过滤器，还有正则匹配过滤器
+                	level: error
+                    onMatch: ACCEPT  #接收该等级及以上等级内容
+                    onMismatch: DENY    #拒绝（ACCEPT，NEUTRAL， DETY）
+                    PatternLayout:
+                    	pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}-Alphashihui:%4p %t (%F:%L) - %m%n"
+                    Policies: #归档规则（二者满足一个就归档）
+                    	TimeBasedTriggeringPolicy: #时间，每天
+                        	interval: 1
+                            modulate:true
+                    	SizeBasedTriggeringPolicy: #文件大小，
+                            size: "10 MB"
+                        DefaultRolloverStrategy: #默认归档个数
+                            max:1000
+                 - name: DEBUG_FILE
+                 ignoreExceptions: false
+                 fileName: ${log.path}/debug/debug.log
+                 filePattern: "${log.path}/debug/debug_%d{yyyy-MM-dd}-%i.log.gz"
+                 Filters:
+                 	ThresholdFilter:
+                    	- level: error
+                        onMatch: DENY
+                        onMismatch: NEUTRAL
+                        - level:warn
+                        onMatch: DENY
+                        onMismatch: NEUTRAL
+                        - level: debug
+                        onMatch: ACCEPT
+                        onMismatch: DENY
+                    PatternLayout:
+                    	pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}-Alphashihui:%4p %t (%F:%L) - %m%n"
+                    Policies:
+                    	TimeBasedTriggeringPolicy:
+                        	interval: 1
+                            modulate: true
+                        SizeBasedTriggeringPolicy:
+                            size: "10 MB"
+                        DefaultRolloverStrategy:
+                            max: 1000
+	Loggers:    #具体logger
+		Root: #根logger
+			level: all
+            AppenderRef: #映射appender
+            	- ref: CONSOLE
+        logger:
+            -
+                name: com.alphashihuiserver #为com.alphashihuiserver包配置logger
+                level: debug
+                additivity: false #避免多个文件中重复出现同一日志
+                AppenderRef:
+                   - ref: CONSOLE
+                   - ref: DEBUG_FILE
+                   - ref: INFO_FILE
