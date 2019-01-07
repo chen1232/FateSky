@@ -22,9 +22,9 @@ spring:
     connectionProperties: 'druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000'  #通过connectProperties属性来打开mergeSql功能;慢SQL记录
 ######################### Redis配置信息  #################  
   redis:
-    host: 192.168.68.166
+    host: 127.0.0.1
     port: 6379
-    password: studyjava
+#    password: studyjava
     timeout: 1000
     database: 0
     pool:

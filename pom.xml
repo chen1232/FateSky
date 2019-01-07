@@ -22,6 +22,8 @@
 		<mysql.version>8.0.11</mysql.version>
 		<log4j.version>1.2.16</log4j.version>
 		<mybatis-plus.version>3.0.7.1</mybatis-plus.version>
+		<mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
+		<fastjson.version>1.2.54</fastjson.version>
 	</properties>
 	
 	<dependencies>
@@ -44,6 +46,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- fastjson包 -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>${fastjson.version}</version>
 		</dependency>
 		
 		<!-- Redis包 -->
@@ -81,7 +90,7 @@
 		 <dependency>
 		     <groupId>com.baomidou</groupId>
 		     <artifactId>mybatisplus-spring-boot-starter</artifactId>
-		     <version>1.0.5</version>
+		     <version>${mybatisplus-spring-boot-starter.version}</version>
 		 </dependency>
 	</dependencies>
 
