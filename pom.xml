@@ -46,6 +46,12 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Redis包 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+		
 		<!-- log4j2日志包 -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
@@ -63,7 +69,7 @@
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
-		    <version>${mysql.version}</version>
+		    <version>${mysql.version}</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
 		
 		 <!-- mybatis-plus包  -->

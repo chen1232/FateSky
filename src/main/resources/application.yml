@@ -20,6 +20,18 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20  #开启poolPreparedStatements后生效
     filters: stat,wall,log4j2                       #配置扩展插件，常用的插件有=>stat:监控统计  log4j2:日志  wall:防御sql注入
     connectionProperties: 'druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000'  #通过connectProperties属性来打开mergeSql功能;慢SQL记录
+######################### Redis配置信息  #################  
+  redis:
+    host: 192.168.68.166
+    port: 6379
+    password: studyjava
+    timeout: 1000
+    database: 0
+    pool:
+      max-active: 10
+      max-idle: 8
+      min-idle: 2
+      max-wait: 100
     
 mybatis-plus:
   typeAliasesPackage: com.fatesky.modular.model

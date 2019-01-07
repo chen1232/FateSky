@@ -12,6 +12,5 @@ public class FateskyApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
 
