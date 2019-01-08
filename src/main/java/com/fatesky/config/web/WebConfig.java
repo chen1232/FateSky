@@ -32,6 +32,10 @@ public class WebConfig implements WebMvcConfigurer {
 //    @Autowired
 //    private GunsProperties gunsProperties;
 //    
+	  /**
+	   * 由于redisTemplate和拦截器的加载顺序问题，所以要先实例化一个bean再进行拦截器的注册，否则拦截器中的方法无法使用
+	   * 
+	   * */
 //    @Bean
 //    public UserLoginInterceptor getUserLoginInterceptor() {
 //    	return new UserLoginInterceptor();
