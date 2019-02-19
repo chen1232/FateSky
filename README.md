@@ -6,6 +6,7 @@ http://localhost:8080/druid/index.html# FateSky
 #### 软件架构
 软件架构说明
     项目基于springboot2.X搭建，将整合shiro权限管理和消息队列（暂定为activeMQ）
+    将使用lombok来使代码更加简洁
 
 
 #### 安装教程
