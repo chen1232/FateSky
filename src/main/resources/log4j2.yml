@@ -4,7 +4,7 @@ Configuration:
 	Properties:
 		Property: #常量
 		- name: log.path
-		value: /opt/logs         
+		value: /opt/logs
 	Appenders: #输出项
 		Console: #输出到控制台
 		name: CONSOLE
@@ -22,7 +22,7 @@ Configuration:
             filePattern: "${log.path}/error/error_%d{yyyy-MM-dd}-%i.log.gz"
             Filters: #过滤器
             	ThresholdFilter: #等级过滤器，还有正则匹配过滤器
-                	level: error
+           L     	level: error
                     onMatch: ACCEPT  #接收该等级及以上等级内容
                     onMismatch: DENY    #拒绝（ACCEPT，NEUTRAL， DETY）
                     PatternLayout:
