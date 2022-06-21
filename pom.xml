@@ -19,7 +19,7 @@
 		<java.version>1.8</java.version><!-- 声明版本号，以后统一在这里进行管理-->
 		<packaging>jar</packaging>
 		<druid.version>1.1.12</druid.version>
-		<mysql.version>8.0.16</mysql.version>
+		<mysql.version>8.0.28</mysql.version>
 		<log4j.version>1.2.16</log4j.version>
 		<mybatis-plus.version>3.0.7.1</mybatis-plus.version>
 		<mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
